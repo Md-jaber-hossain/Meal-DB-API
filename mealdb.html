@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal-DB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        body {
+            background: url(meal1.jpg) no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <!-- https://www.themealdb.com/ -->
+        <h1 class="text-center bg-dark text-white my-4 w-50 rounded-3 mx-auto">Search your favorite Meal</h1>
+        <!-- input field and search button -->
+        <div class="container">
+            <form class="col-md-6 m-auto py-2">
+                <div class="input-group mb-3">
+                    <input id="inputField" type="text" class="form-control" placeholder="Enter a Team Name">
+                    <div class="input-group-append">
+                        <button onclick="searchUpdate()" type="button" class="btn btn-dark">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Spinner -->
+        <div class="d-flex justify-content-center mt-5 d-none" id="spinner">
+            <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Error message when no input value-->
+        <div id="error-message" class="bg-dark rounded-3 w-50 mx-auto text-danger text-center" style="display: none;">
+            <h2>Please, insert a Meal Name</h2>
+        </div>
+
+        <!-- Error message when not match with search-->
+        <div id="error-not-found" class="bg-dark rounded-3 w-50 mx-auto text-danger text-center" style="display: none;">
+            <h2>Please, insert valid Meal name</h2>
+        </div>
+
+        <!--Display Specific Meal -->
+        <div class="m-5" id="specificMealResult">
+        </div>
+
+        <!--Display Search result -->
+        <div id="searchResult" class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+
+    </section>
+    
+    <!-- Bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <!-- my js -->
+    <script src="mealdb.js"></script>
+</body>
+</html>
